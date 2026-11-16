@@ -19,6 +19,7 @@ Public URL: https://ibrahem-badawi-platform.vercel.app/
 - Three case-study summaries (CodeMood, GrowthMood, ImpactMood) organized by challenge and proposed solution. Product functionality is evolving; no usage, deployment-completeness, or commercial metrics are asserted.
 - An English one-page downloadable CV, linked from the hero and professional profile.
 - Search and social metadata, canonical URL, sitemap and robots.txt.
+- A contact hub based on the user-supplied `ibrahemjbadawi` username, including LinkedIn and other social links. WhatsApp and a replacement contact email are intentionally not inferred without a confirmed phone number and complete email address.
 
 ## Notes
 

@@ -96,3 +96,20 @@ html[dir='ltr'] .portrait-caption{align-items:flex-start;text-align:left}
   .case-card{padding:26px 0}.case-index strong{font-size:27px}.case-details{grid-template-columns:1fr;row-gap:14px}.case-details p{font-size:13px;line-height:1.9;max-width:none}.case-actions{flex-wrap:wrap;gap:8px}.case-actions a{font-size:13px}
   .nav a{font-size:15px;min-height:44px;display:flex;align-items:center}.menu-btn{min-width:44px;min-height:44px}.lang-btn{min-height:44px;min-width:42px}
 }
+
+/* A small, readable signature for Ibrahem's cross-platform identity. */
+.social-section{background:#eef4f0;border-top:1px solid var(--line);padding:64px 0 76px}
+.social-layout{display:grid;grid-template-columns:minmax(230px,.75fr) minmax(0,1.25fr);gap:60px;align-items:start}
+.social-heading{display:flex;gap:17px;align-items:flex-start}
+.social-mark{width:55px;height:55px;border-radius:18px;background:var(--teal-deep);display:grid;place-items:center;color:white;font:800 26px 'Manrope',sans-serif;flex:none}
+.social-heading h2{font-size:23px;line-height:1.45;margin:0 0 6px}
+.social-heading p{font-size:13px;color:#607c77;margin:0 0 5px}
+.social-heading strong{font:800 16px/1.5 'Manrope',sans-serif;color:var(--teal)}
+.social-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.social-grid a{display:flex;align-items:center;gap:11px;min-height:60px;padding:12px 14px;background:#fff;border:1px solid #d9e4dd;border-radius:12px;font:700 13px 'Manrope','IBM Plex Sans Arabic',sans-serif;transition:border-color .16s,background .16s}
+.social-grid a:hover{border-color:#81b7a9;background:#fbfffc}
+.social-grid a:focus-visible{outline:3px solid #deac57;outline-offset:3px}
+.social-icon{width:30px;height:30px;flex:none;display:grid;place-items:center;border-radius:9px;color:#14746c;background:#e5f3ee;font:800 11px 'Manrope',sans-serif}
+.social-arrow{margin-inline-start:auto;font-size:16px;color:#8ca39e}
+@media(max-width:900px){.social-layout{grid-template-columns:1fr;gap:27px}}
+@media(max-width:600px){.social-section{padding:47px 0 54px}.social-heading h2{font-size:21px}.social-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.social-grid a{min-height:54px;padding:10px;font-size:12px;gap:7px}.social-icon{width:27px;height:27px;font-size:10px}.social-arrow{font-size:14px}}
