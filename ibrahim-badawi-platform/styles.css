@@ -34,3 +34,65 @@ html[dir='ltr'] .portrait-caption{align-items:flex-start;text-align:left}
 @media(max-width:600px){.brand-logo{width:42px;height:42px;border-radius:12px}.footer-logo{width:36px;height:36px}}
 .hero-visual .floating-note-two{bottom:3px;right:-10px}
 @media(max-width:600px){.hero-visual .floating-note-two{bottom:0;right:0}}
+
+/* Professional identity: an editorial CV and evidence-led case studies. */
+.resume-section{background:#fff;border-top:1px solid var(--line)}
+.resume-heading{display:flex;align-items:end;justify-content:space-between;gap:35px;margin-bottom:42px}
+.resume-heading h2{font-size:clamp(32px,3.55vw,48px);line-height:1.38;max-width:730px;margin:16px 0 10px}
+.resume-heading p{color:var(--ink-soft);font-size:14px;line-height:2;max-width:690px;margin:0}
+.resume-downloads{display:flex;flex-direction:column;align-items:flex-start;gap:12px;flex:none}
+.resume-downloads .btn{white-space:nowrap}
+.resume-layout{display:grid;grid-template-columns:minmax(0,1.28fr) minmax(290px,.72fr);gap:25px;align-items:start}
+.resume-primary{border-top:3px solid var(--teal);padding:28px 32px 12px;background:var(--cream);border-radius:0 0 17px 17px}
+.resume-block-title{display:flex;align-items:center;gap:10px;margin-bottom:25px}
+.resume-block-title h3{font-size:17px;margin:0;line-height:1.5}
+.resume-glyph{width:36px;height:36px;border-radius:11px;background:#dbece6;color:var(--teal);display:grid;place-items:center;font:700 21px 'Manrope',sans-serif;flex:none}
+.experience-entry{padding:0 0 25px;border-bottom:1px solid #d9e4de;margin-bottom:27px}
+.experience-entry:last-child{border-bottom:0;margin-bottom:0}
+.experience-header{display:flex;align-items:start;justify-content:space-between;gap:20px}
+.experience-type{font-size:12px;color:#517b77;font-weight:600}
+.experience-header h4{font-size:23px;line-height:1.4;margin:6px 0 10px;font-weight:700}
+.experience-header h4:not([data-i18n]){font-family:'Manrope',sans-serif;letter-spacing:-.5px}
+.experience-ongoing,.experience-period{font-size:11px;color:#37736b;white-space:nowrap;background:#dbeee6;padding:6px 11px;border-radius:8px;font-weight:700}
+.experience-period{background:#fff;border:1px solid var(--line);color:#6c8582}
+.experience-entry>p{font-size:14px;line-height:2.05;color:#52676a;margin:0 0 17px;max-width:660px}
+.skill-pills{display:flex;flex-wrap:wrap;gap:8px}
+.skill-pills span{font-size:11px;color:#30665f;background:#e5f2ec;padding:5px 11px;border-radius:6px;font-weight:600}
+.resume-aside{display:flex;flex-direction:column;gap:14px}
+.resume-aside-block{padding:24px 25px;border:1px solid var(--line);background:#fff;border-radius:15px;box-shadow:0 10px 30px #173e3910}
+.resume-aside-block .resume-block-title{margin-bottom:13px}
+.resume-aside-block .resume-glyph{background:#f5f0e5;color:#9a6828}
+.resume-aside-block>strong{font-size:15px;display:block;margin-bottom:4px;line-height:1.6}
+.resume-aside-block>span{display:block;font-size:12px;color:var(--teal);font-weight:600;line-height:1.8}
+.resume-aside-block>p{font-size:12px;line-height:1.9;color:#748582;margin:12px 0 0}
+.resume-aside-block.skills-block .skill-pills span{background:#f1f5f2;color:#4b6966}
+.case-section{background:#f8f9f6}
+.case-header{align-items:end;margin-bottom:28px}
+.case-list{border-top:1px solid #cadcd3}
+.case-card{display:grid;grid-template-columns:minmax(220px,.44fr) minmax(0,1fr);gap:42px;padding:34px 0;border-bottom:1px solid #cadcd3}
+.case-index{display:flex;flex-direction:column;align-items:flex-start;gap:7px}
+.case-index>span:first-child{font:700 11px/1.5 'Manrope',sans-serif;letter-spacing:1px;color:#839893}
+.case-index strong{font:800 clamp(24px,3vw,36px)/1.3 'Manrope',sans-serif;letter-spacing:-1px}
+.case-color{width:44px;height:5px;border-radius:20px;background:var(--teal);margin-top:12px}
+.case-color.code-color{background:#577bc3}.case-color.growth-color{background:#339b68}.case-color.impact-color{background:#886ed0}
+.case-details{display:grid;grid-template-columns:1fr 1fr;column-gap:36px;row-gap:18px}
+.case-label{font-size:11px;color:var(--teal);font-weight:700}
+.case-details p{font-size:14px;color:#516a69;line-height:2;max-width:360px;margin:7px 0 0}
+.case-actions{grid-column:1/-1;display:flex;align-items:center;justify-content:space-between;gap:12px;padding-top:15px;border-top:1px solid var(--line)}
+.case-stage{color:#778e86;font-size:11px}
+.case-actions a{color:var(--teal);font-size:13px;font-weight:700;border-bottom:1px solid #8bc2b5;padding:5px 0}
+.case-actions a:focus-visible,.project-link:focus-visible,.text-link:focus-visible,.btn:focus-visible,.nav a:focus-visible,.filter:focus-visible,.menu-btn:focus-visible,.lang-btn:focus-visible{outline:3px solid #deac57;outline-offset:4px}
+@media(max-width:1050px){.resume-heading{align-items:start;flex-direction:column;gap:18px}.resume-downloads{flex-direction:row;align-items:center}.case-card{grid-template-columns:200px 1fr;gap:24px}}
+@media(max-width:900px){.resume-layout{grid-template-columns:1fr}.resume-aside{display:grid;grid-template-columns:1fr 1fr}.resume-aside-block:last-child{grid-column:1/-1}.case-card{grid-template-columns:1fr;gap:18px}.case-index{flex-direction:row;align-items:baseline;flex-wrap:wrap;gap:14px}.case-index .case-color{margin-top:0}}
+@media(max-width:600px){
+  .section{padding:70px 0}.hero h1{font-size:clamp(32px,9vw,40px);line-height:1.48}.accent-underline{white-space:normal}
+  .hero-lead{font-size:15px;line-height:1.85}.hero-actions{align-items:stretch}.hero-actions .btn{flex:1 1 170px;min-height:48px;line-height:1.4;gap:10px;text-align:center}
+  .section-header p{font-size:13px;line-height:1.85}.about-body>p{font-size:14px;line-height:1.9}
+  .filters{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:thin;scroll-snap-type:x proximity;padding:0 1px 10px;margin-bottom:20px}.filter{font-size:12px;padding:10px 14px;flex:none;min-height:43px;scroll-snap-align:start}
+  .project-info p{font-size:14px;line-height:1.85}.project-link{font-size:13px;padding:7px 0}
+  .resume-heading{margin-bottom:23px}.resume-heading h2{font-size:30px;line-height:1.45}.resume-heading p{font-size:13px}.resume-downloads{flex-wrap:wrap}.resume-primary{padding:23px 18px 0}
+  .experience-header{flex-direction:column;gap:2px}.experience-header h4{font-size:21px;margin:4px 0}.experience-ongoing,.experience-period{margin-bottom:10px}.experience-entry>p{font-size:13px;line-height:1.95}
+  .resume-aside{display:flex}.resume-aside-block{padding:22px 20px}.skill-pills span{font-size:12px;padding:6px 10px}
+  .case-card{padding:26px 0}.case-index strong{font-size:27px}.case-details{grid-template-columns:1fr;row-gap:14px}.case-details p{font-size:13px;line-height:1.9;max-width:none}.case-actions{flex-wrap:wrap;gap:8px}.case-actions a{font-size:13px}
+  .nav a{font-size:15px;min-height:44px;display:flex;align-items:center}.menu-btn{min-width:44px;min-height:44px}.lang-btn{min-height:44px;min-width:42px}
+}
