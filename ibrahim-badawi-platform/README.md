@@ -1,13 +1,15 @@
-# Ibrahim Badawi — Personal Digital Platform
+# Ibrahem Badawi — Personal Digital Platform
 
-Arabic-first bilingual personal portfolio and knowledge platform for Ibrahim Badawi, focused on management information systems, digital innovation, and TechMood Technology.
+Arabic-first bilingual personal portfolio and knowledge platform for **Ibrahem Badawi**, focused on management information systems, digital innovation, and TechMood Technology.
 
-## Deploy
+## Deployment
 
-On Vercel, connect this repository and set the root directory to `ibrahim-badawi-platform`. This folder is a standalone static website (`index.html`, `styles.css`, `script.js`, `profile.webp`). New commits to the repository's production branch deploy automatically.
+The Vercel project `ibrahim-badawi-platform` is linked to `IbrahemJBadawi/Personal-WebSite`, with its root directory configured as `ibrahim-badawi-platform`. Updates to the GitHub production branch deploy automatically.
+
+This folder is a standalone static website consisting of `index.html`, `styles.css`, `script.js`, `profile.webp`, and the custom logo assets.
 
 ## Notes
 
-- The project cards describe initiatives in different stages of development.
+- The project cards describe initiatives at different development stages.
 - The site includes original short articles and Arabic/English language switching.
-- Photo used with the owner's provided asset.
+- The portrait was provided by Ibrahem. The logo uses the **iB** monogram.
