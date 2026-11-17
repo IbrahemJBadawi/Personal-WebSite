@@ -122,3 +122,37 @@ html[dir='ltr'] .portrait-caption{align-items:flex-start;text-align:left}
 @media(max-width:900px){.social-layout{grid-template-columns:1fr;gap:27px}}
 @media(max-width:600px){.social-section{padding:47px 0 54px}.social-heading h2{font-size:21px}.social-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.social-grid a{min-height:54px;padding:10px;font-size:12px;gap:7px}.social-icon{width:27px;height:27px;font-size:10px}.social-arrow{font-size:14px}}
 
+/* Verified marks served by the projects themselves; no invented project artwork. */
+.project-art-real{display:grid;place-items:center;text-decoration:none;outline-offset:-5px}
+.project-art-real .brand-art-halo{position:absolute;inset:auto;width:270px;height:270px;border-radius:50%;background:radial-gradient(circle,#fff9,transparent 69%);transform:scale(.9);transition:transform .48s cubic-bezier(.2,.8,.2,1),opacity .35s;opacity:.5;pointer-events:none}
+.project-brand-image{position:relative;z-index:2;display:block;width:118px;height:118px;object-fit:contain;filter:drop-shadow(0 12px 22px #071d2220);transition:transform .45s cubic-bezier(.18,.72,.25,1),filter .45s}
+.project-card:hover .project-brand-image,.project-art-real:focus-visible .project-brand-image{transform:translateY(-5px) scale(1.085) rotate(-2deg);filter:drop-shadow(0 20px 24px #071d2238)}
+.project-card:hover .brand-art-halo,.project-art-real:focus-visible .brand-art-halo{transform:scale(1.25);opacity:.85}
+.project-image-caption{position:absolute;bottom:15px;inset-inline-start:18px;z-index:2;font-size:10px;font-weight:700;letter-spacing:.1px;padding:7px 11px;border:1px solid #ffffff4f;background:#ffffffbd;border-radius:9px;color:#24464a;backdrop-filter:blur(9px)}
+.project-art-visit{position:absolute;top:14px;inset-inline-end:14px;z-index:2;width:30px;height:30px;display:grid;place-items:center;border-radius:50%;background:#ffffffdf;color:#19393d;font:700 16px Arial,sans-serif;transition:transform .3s,background .3s}
+.project-card:hover .project-art-visit{transform:translate(-2px,-2px);background:#fff}
+.project-art-real.art-techmood{background:radial-gradient(circle at 50% 100%,#145a61,#082d32 75%)}
+.project-art-real.art-mentor{background:linear-gradient(145deg,#e5efff,#b5cee9)}
+.project-art-real.art-code{background:radial-gradient(circle at 40% 15%,#364e85,#171f36 78%)}
+.project-art-real.art-growth{background:linear-gradient(125deg,#c6ecd5,#70bfa4)}
+.project-art-real.art-health{background:linear-gradient(125deg,#eaf9f6,#9bcfc7)}
+.project-art-real.art-impact{background:radial-gradient(circle at 30% 0%,#72569a,#332650 85%)}
+.project-art-real.art-techmood .project-image-caption,.project-art-real.art-code .project-image-caption,.project-art-real.art-impact .project-image-caption{color:#fff;background:#0b243c55;border-color:#ffffff3a}
+.project-art-real:focus-visible{outline:3px solid #efb45c}
+
+/* Navigation motion tracks the actual expanded state, including keyboard access. */
+.menu-btn{align-items:center;position:relative;border-radius:12px;transition:background .25s,color .25s}
+.menu-btn span{display:block;transform-origin:center;transition:transform .3s cubic-bezier(.2,.8,.2,1),opacity .16s,background .2s}
+.menu-btn:hover,.menu-btn.open{background:#e1eee9}
+.menu-btn.open span:first-child{transform:translateY(7px) rotate(45deg)}
+.menu-btn.open span:nth-child(2){transform:scaleX(.25);opacity:0}
+.menu-btn.open span:last-child{transform:translateY(-7px) rotate(-45deg)}
+@media(max-width:900px){.nav.open{animation:nav-reveal .28s cubic-bezier(.2,.8,.2,1) both}.nav a{border-bottom:1px solid #dce9e2}.nav a:last-child{border-bottom:0}}
+@keyframes nav-reveal{from{opacity:0;transform:translateY(-9px)}to{opacity:1;transform:translateY(0)}}
+.project-card{transition:transform .38s cubic-bezier(.19,.78,.23,1),box-shadow .35s,border-color .35s}
+.project-card:hover{border-color:#b4d0c6}
+.project-card:not([hidden]){animation:project-appear .3s both}
+@keyframes project-appear{from{opacity:.55;transform:translateY(9px)}to{opacity:1;transform:translateY(0)}}
+.header-cta>span[aria-hidden],.btn .arrow,.project-link>span[aria-hidden],.text-link>span[aria-hidden],.social-arrow,.project-art-visit{font-family:Arial,sans-serif}
+@media(prefers-reduced-motion:reduce){.project-card,.project-brand-image,.brand-art-halo,.project-art-visit,.menu-btn,.menu-btn span{transition:none!important}.project-card:not([hidden]),.nav.open{animation:none!important}}
+

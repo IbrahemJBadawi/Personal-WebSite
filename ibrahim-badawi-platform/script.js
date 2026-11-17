@@ -85,6 +85,8 @@ copy.ar.linkCopied = 'تم نسخ رابط الموقع.';
 copy.en.linkCopied = 'Website link copied to clipboard.';
 copy.ar.copyFailed = 'تعذّر النسخ. يمكنك نسخ الرابط يدويًا.';
 copy.en.copyFailed = 'Copy unavailable. You can copy the URL manually.';
+copy.ar.realLogo = 'شعار المنصة الأصلي';
+copy.en.realLogo = 'Original platform logo';
 
 const htmlKeys = new Set(['heroTitle','aboutTitle','journeyTitle','contactTitle']);
 let language = 'ar';
@@ -107,7 +109,8 @@ function setLanguage(lang) {
   const langButton = document.querySelector('#lang-toggle');
   langButton.textContent = lang === 'ar' ? 'EN' : 'عربي';
   langButton.setAttribute('aria-label', lang === 'ar' ? 'Switch to English' : 'التبديل إلى العربية');
-  document.querySelector('#menu-toggle').setAttribute('aria-label', lang === 'ar' ? 'فتح القائمة' : 'Open menu');
+  const menu = document.querySelector('#menu-toggle');
+  menu.setAttribute('aria-label', menu.getAttribute('aria-expanded') === 'true' ? (lang === 'ar' ? 'إغلاق القائمة' : 'Close menu') : (lang === 'ar' ? 'فتح القائمة' : 'Open menu'));
   document.querySelector('#profile-feedback').textContent = '';
   try { localStorage.setItem('ibrahem-website-language', lang); } catch (_) {}
 }
@@ -116,16 +119,22 @@ document.querySelector('#lang-toggle').addEventListener('click', () => setLangua
 
 const menuButton = document.querySelector('#menu-toggle');
 const nav = document.querySelector('#main-nav');
-function closeMenu(){ nav.classList.remove('open'); menuButton.setAttribute('aria-expanded','false'); }
+function setMenuState(open) {
+  nav.classList.toggle('open', open);
+  menuButton.classList.toggle('open', open);
+  menuButton.setAttribute('aria-expanded', String(open));
+  menuButton.setAttribute('aria-label', open ? (language === 'ar' ? 'إغلاق القائمة' : 'Close menu') : (language === 'ar' ? 'فتح القائمة' : 'Open menu'));
+}
+function closeMenu(){ setMenuState(false); }
 menuButton.addEventListener('click', () => {
-  const isOpen = nav.classList.toggle('open');
-  menuButton.setAttribute('aria-expanded', String(isOpen));
+  setMenuState(!nav.classList.contains('open'));
 });
 nav.querySelectorAll('a').forEach(link => link.addEventListener('click', closeMenu));
 document.addEventListener('click', event => {
   if (!nav.contains(event.target) && !menuButton.contains(event.target)) closeMenu();
 });
 document.addEventListener('keydown', event => { if (event.key === 'Escape') closeMenu(); });
+window.addEventListener('resize', () => { if (window.innerWidth > 900 && nav.classList.contains('open')) closeMenu(); });
 
 document.querySelectorAll('[data-filter]').forEach(button => button.addEventListener('click', () => {
   const filter = button.dataset.filter;
