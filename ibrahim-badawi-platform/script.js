@@ -73,6 +73,19 @@ const copy = {
   }
 };
 
+copy.ar.heroIdentity = 'مؤسس TechMood Technology · من غزة إلى الابتكار الرقمي';
+copy.en.heroIdentity = 'Founder of TechMood Technology · From Gaza to digital innovation';
+copy.ar.copyIntro = 'نسخ نبذة تعريفية';
+copy.en.copyIntro = 'Copy introduction';
+copy.ar.shareProfile = 'مشاركة موقعي';
+copy.en.shareProfile = 'Share my profile';
+copy.ar.profileCopied = 'تم نسخ النبذة التعريفية.';
+copy.en.profileCopied = 'Introduction copied to clipboard.';
+copy.ar.linkCopied = 'تم نسخ رابط الموقع.';
+copy.en.linkCopied = 'Website link copied to clipboard.';
+copy.ar.copyFailed = 'تعذّر النسخ. يمكنك نسخ الرابط يدويًا.';
+copy.en.copyFailed = 'Copy unavailable. You can copy the URL manually.';
+
 const htmlKeys = new Set(['heroTitle','aboutTitle','journeyTitle','contactTitle']);
 let language = 'ar';
 try { if (localStorage.getItem('ibrahem-website-language') === 'en' || localStorage.getItem('ibrahim-website-language') === 'en') language = 'en'; } catch (_) {}
@@ -95,6 +108,7 @@ function setLanguage(lang) {
   langButton.textContent = lang === 'ar' ? 'EN' : 'عربي';
   langButton.setAttribute('aria-label', lang === 'ar' ? 'Switch to English' : 'التبديل إلى العربية');
   document.querySelector('#menu-toggle').setAttribute('aria-label', lang === 'ar' ? 'فتح القائمة' : 'Open menu');
+  document.querySelector('#profile-feedback').textContent = '';
   try { localStorage.setItem('ibrahem-website-language', lang); } catch (_) {}
 }
 
@@ -157,5 +171,43 @@ document.querySelector('#close-dialog').addEventListener('click', closeArticle);
 document.querySelector('#dialog-done').addEventListener('click', closeArticle);
 dialog.addEventListener('click', event => { if (event.target === dialog) closeArticle(); });
 dialog.addEventListener('close', () => { document.body.classList.remove('modal-open'); if (returnFocusTo) returnFocusTo.focus(); });
+async function copyText(text) {
+  if (navigator.clipboard && window.isSecureContext) {
+    await navigator.clipboard.writeText(text);
+    return;
+  }
+  const temp = document.createElement('textarea');
+  temp.value = text;
+  temp.style.position = 'fixed';
+  temp.style.opacity = '0';
+  document.body.appendChild(temp);
+  temp.select();
+  const success = document.execCommand('copy');
+  temp.remove();
+  if (!success) throw new Error('Clipboard unavailable');
+}
+
+function profileActionFeedback(key) {
+  document.querySelector('#profile-feedback').textContent = copy[language][key];
+}
+
+document.getElementById('copy-intro').addEventListener('click', async () => {
+  const introduction = language === 'ar'
+    ? 'إبراهيم بدوي — مهتم بإدارة نظم المعلومات والابتكار الرقمي، أتممت متطلبات البكالوريوس في جامعة الأقصى بغزة وأعمل على بناء منتجات رقمية ضمن TechMood Technology. أركز على تحليل الاحتياجات وتجربة المستخدم وتطوير الحلول ذات الأثر.'
+    : 'Ibrahem Badawi — focused on Management Information Systems and digital innovation. I completed my undergraduate academic requirements at Al-Aqsa University in Gaza and develop digital product ideas through TechMood Technology, with an interest in user needs, experience design and meaningful solutions.';
+  try { await copyText(introduction); profileActionFeedback('profileCopied'); }
+  catch (_) { profileActionFeedback('copyFailed'); }
+});
+
+document.getElementById('share-profile').addEventListener('click', async () => {
+  const url = window.location.origin + window.location.pathname;
+  if (navigator.share) {
+    try { await navigator.share({ title: document.title, text: language === 'ar' ? 'موقع إبراهيم بدوي الشخصي' : 'Ibrahem Badawi portfolio', url }); return; }
+    catch (error) { if (error.name === 'AbortError') return; }
+  }
+  try { await copyText(url); profileActionFeedback('linkCopied'); }
+  catch (_) { profileActionFeedback('copyFailed'); }
+});
 document.querySelector('#year').textContent = new Date().getFullYear();
 setLanguage(language);
+

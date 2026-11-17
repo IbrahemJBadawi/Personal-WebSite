@@ -32,6 +32,14 @@ html[dir='ltr'] .portrait-caption{align-items:flex-start;text-align:left}
 .brand-logo{display:block;width:48px;height:48px;flex:none;object-fit:contain;border-radius:14px;filter:drop-shadow(0 3px 7px rgba(7,79,77,.09))}
 .footer-logo{display:block;width:40px;height:40px;object-fit:contain;border-radius:12px}
 @media(max-width:600px){.brand-logo{width:42px;height:42px;border-radius:12px}.footer-logo{width:36px;height:36px}}
+/* Portfolio tools and current-role badge: adapted to the site's own identity. */
+.hero-identity-line{display:inline-flex;align-items:center;gap:10px;width:fit-content;max-width:100%;margin-top:16px;padding:9px 15px;border:1px solid #cce5dc;border-radius:99px;background:#ecf8f2;color:#126c61;font-size:12px;font-weight:700;line-height:1.7}
+.identity-dot{width:8px;height:8px;flex:none;background:#3aa18a;border-radius:50%;box-shadow:0 0 0 4px #3aa18a21}
+.profile-tools{display:flex;align-items:center;gap:11px;flex-wrap:wrap;margin-top:30px;padding-top:23px;border-top:1px solid #ffffff2e}
+.profile-tool{display:inline-flex;align-items:center;gap:10px;min-height:44px;padding:10px 16px;border:1px solid #ffffff55;border-radius:100px;background:#ffffff12;color:#f2fff9;font-size:12px;font-weight:700;transition:background .18s,transform .18s}
+.profile-tool:hover{background:#ffffff25;transform:translateY(-2px)}.profile-tool span:first-child{font:700 17px/1 Arial,sans-serif;color:#b5e6d4}
+.profile-feedback{min-height:1.2em;margin:7px 0 0!important;color:#c9edda!important;font-size:12px!important;font-weight:700}
+@media(max-width:600px){.hero-identity-line{font-size:11px;padding:8px 12px}.profile-tools{gap:9px}.profile-tool{flex:1 1 142px;justify-content:center}}
 .hero-visual .floating-note-two{bottom:3px;right:-10px}
 @media(max-width:600px){.hero-visual .floating-note-two{bottom:0;right:0}}
 
@@ -113,3 +121,4 @@ html[dir='ltr'] .portrait-caption{align-items:flex-start;text-align:left}
 .social-arrow{margin-inline-start:auto;font-size:16px;color:#8ca39e}
 @media(max-width:900px){.social-layout{grid-template-columns:1fr;gap:27px}}
 @media(max-width:600px){.social-section{padding:47px 0 54px}.social-heading h2{font-size:21px}.social-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.social-grid a{min-height:54px;padding:10px;font-size:12px;gap:7px}.social-icon{width:27px;height:27px;font-size:10px}.social-arrow{font-size:14px}}
+
