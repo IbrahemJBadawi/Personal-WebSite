@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 408 420" role="img" aria-labelledby="title">
+  <title id="title">Ibrahem Badawi monogram</title>
+  <defs>
+    <linearGradient id="techmood-blue" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#2454e5"/>
+      <stop offset="1" stop-color="#1742ce"/>
+    </linearGradient>
+  </defs>
+  <rect x="1" y="1" width="406" height="418" rx="103" fill="url(#techmood-blue)"/>
+  <circle cx="124" cy="108" r="28" fill="#20bdef"/>
+  <path d="M99 147h61v204H99z" fill="#fff"/>
+  <path d="M166 98h79c44 0 72 29 72 69 0 26-12 46-33 59 27 13 44 35 44 63 0 39-31 62-80 62h-82v-50h80c21 0 33-11 33-29s-13-30-33-30h-80v-49h77c19 0 30-9 30-25 0-15-12-25-31-25h-76z" fill="#fff"/>
+</svg>
