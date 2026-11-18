@@ -170,7 +170,7 @@ html[dir='ltr'] .portrait-caption{align-items:flex-start;text-align:left}
 @media(prefers-reduced-motion:reduce){.project-card,.project-brand-image,.brand-art-halo,.project-art-visit,.menu-btn,.menu-btn span{transition:none!important}.project-card:not([hidden]),.nav.open{animation:none!important}}
 
 /* Calm proportions, especially on a narrow phone screen. */
-.page-progress{position:fixed;top:0;inset-inline-start:0;z-index:110;width:0;height:3px;background:linear-gradient(90deg,#08786e,#e5af57);pointer-events:none;transition:width .12s linear}
+.page-progress{position:fixed;top:0;inset-inline-start:0;z-index:110;width:0;height:3px;background:linear-gradient(90deg,#1742ce 0%,#2454e5 58%,#20bdef 100%);pointer-events:none;transition:width .12s linear}
 .section{padding-block:88px}
 .hero{padding-top:48px}
 .hero-layout{min-height:490px;gap:4%}
