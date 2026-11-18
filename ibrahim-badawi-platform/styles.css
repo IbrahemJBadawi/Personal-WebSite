@@ -117,6 +117,19 @@ html[dir='ltr'] .portrait-caption{align-items:flex-start;text-align:left}
 .social-grid a{display:flex;align-items:center;gap:11px;min-height:60px;padding:12px 14px;background:#fff;border:1px solid #d9e4dd;border-radius:12px;font:700 13px 'Manrope','IBM Plex Sans Arabic',sans-serif;transition:border-color .16s,background .16s}
 .social-grid a:hover{border-color:#81b7a9;background:#fbfffc}
 .social-grid a:focus-visible{outline:3px solid #deac57;outline-offset:3px}
+.social-links-stack{display:grid;gap:13px;min-width:0}
+.telegram-channel-cta{display:flex;align-items:center;gap:15px;min-width:0;padding:21px 20px;border-radius:17px;background:linear-gradient(115deg,#103f43,#0a5b57);color:#fff;border:1px solid #266963;box-shadow:0 12px 25px #16483f15;transition:transform .2s ease,box-shadow .2s ease}
+.telegram-channel-cta:hover{transform:translateY(-2px);box-shadow:0 16px 27px #16483f25}
+.telegram-channel-cta:focus-visible{outline:3px solid #deac57;outline-offset:4px}
+.channel-icon{display:grid;place-items:center;flex:none;width:51px;height:51px;background:#ffffff1c;border:1px solid #ffffff30;border-radius:15px}
+.channel-icon .ui-icon{width:25px;height:25px}
+.channel-copy{display:grid;gap:3px;min-width:0;flex:1}
+.channel-copy strong{font-size:17px;line-height:1.5}
+.channel-copy small{font-size:12px;line-height:1.65;color:#d0e9e3}
+.channel-action{white-space:nowrap;display:inline-flex;align-items:center;gap:7px;font-size:12px;font-weight:700;color:#ffdfa1}
+.channel-action span:last-child{font:18px Arial,sans-serif}
+@media(max-width:600px){.telegram-channel-cta{padding:17px 15px;gap:11px;border-radius:14px}.channel-icon{width:42px;height:42px;border-radius:12px}.channel-icon .ui-icon{width:22px;height:22px}.channel-copy strong{font-size:15px}.channel-copy small{font-size:11px}.channel-action{font-size:11px}}
+@media(max-width:380px){.telegram-channel-cta{flex-wrap:wrap}.channel-action{margin-inline-start:53px}}
 .social-icon{width:30px;height:30px;flex:none;display:grid;place-items:center;border-radius:9px;color:#14746c;background:#e5f3ee;font:800 11px 'Manrope',sans-serif}
 .social-arrow{margin-inline-start:auto;font-size:16px;color:#8ca39e}
 @media(max-width:900px){.social-layout{grid-template-columns:1fr;gap:27px}}
@@ -416,16 +429,104 @@ body{line-height:1.75}
   .portrait-floating-label .ui-icon{width:15px;height:15px}
 }
 @media(prefers-reduced-motion:reduce){.portrait-floating-label{animation:none!important}}
-.social-links-stack{display:grid;gap:13px;min-width:0}
-.telegram-channel-cta{display:flex;align-items:center;gap:15px;min-width:0;padding:21px 20px;border-radius:17px;background:linear-gradient(115deg,#103f43,#0a5b57);color:#fff;border:1px solid #266963;box-shadow:0 12px 25px #16483f15;transition:transform .2s ease,box-shadow .2s ease}
-.telegram-channel-cta:hover{transform:translateY(-2px);box-shadow:0 16px 27px #16483f25}
-.telegram-channel-cta:focus-visible{outline:3px solid #deac57;outline-offset:4px}
-.channel-icon{display:grid;place-items:center;flex:none;width:51px;height:51px;background:#ffffff1c;border:1px solid #ffffff30;border-radius:15px}
-.channel-icon .ui-icon{width:25px;height:25px}
-.channel-copy{display:grid;gap:3px;min-width:0;flex:1}
-.channel-copy strong{font-size:17px;line-height:1.5}
-.channel-copy small{font-size:12px;line-height:1.65;color:#d0e9e3}
-.channel-action{white-space:nowrap;display:inline-flex;align-items:center;gap:7px;font-size:12px;font-weight:700;color:#ffdfa1}
-.channel-action span:last-child{font:18px Arial,sans-serif}
-@media(max-width:600px){.telegram-channel-cta{padding:17px 15px;gap:11px;border-radius:14px}.channel-icon{width:42px;height:42px;border-radius:12px}.channel-icon .ui-icon{width:22px;height:22px}.channel-copy strong{font-size:15px}.channel-copy small{font-size:11px}.channel-action{font-size:11px}}
-@media(max-width:380px){.telegram-channel-cta{flex-wrap:wrap}.channel-action{margin-inline-start:53px}}
+
+/* TechMood blue identity — shared palette across the personal portfolio. */
+:root{
+  --ink:#0e2044;
+  --ink-soft:#60708a;
+  --teal:#2454e5;
+  --teal-deep:#1742ce;
+  --sun:#20bdef;
+  --cream:#f8faff;
+  --line:#dfe7f5;
+  --muted:#eef4ff;
+  --shadow:0 14px 42px rgba(31,62,130,.1);
+}
+body{background:var(--cream)}
+::selection{background:#c6e8ff;color:#0e2044}
+.announcement{background:#0e2044;color:#dbe7ff}
+.announcement-dot,.online-dot{background:#54d1f7;box-shadow:0 0 0 4px #54d1f71c}
+.site-header{background:rgba(248,250,255,.94);border-bottom-color:#dfe7f5a6}
+.nav a{color:#536680}
+.nav a:hover,.nav a:focus-visible{color:var(--teal)}
+.brand-logo,.footer-logo{filter:drop-shadow(0 5px 12px rgba(36,84,229,.16))}
+.brand-copy small{color:#7588a3}
+.header-cta{border-color:#bbcef9}
+.header-cta:hover{background:#1742ce;border-color:#1742ce;color:#fff}
+.hero-lead{color:#536985}
+.hero .eyebrow{background:#edf4ff;border-color:#cee0ff;color:#1742ce}
+.hero .eyebrow:before{background:#20bdef}
+.accent-underline:after{background:#a2dcfb}
+.hero-identity-line{color:#1742ce}
+.identity-dot{background:#20bdef}
+.btn-primary{background:#2454e5;box-shadow:0 12px 28px rgba(36,84,229,.2)}
+.btn-primary:hover{background:#1742ce}
+.btn-outline{border-color:#d1def4}
+.btn-outline:hover{border-color:#2454e5}
+.hero-footnote,.hero-bottom-rule{color:#788ba6}
+.visual-grid{background-image:radial-gradient(#83b5f4 1px,transparent 1px)}
+.portrait-card{background:#eaf2ff;box-shadow:0 30px 70px rgba(31,62,130,.18)}
+.portrait-orbit-one{border-color:#75b4f7a8}
+.portrait-orbit-two{border-color:#20bdef96}
+.portrait-spark{box-shadow:0 0 0 6px #20bdef24}
+.portrait-floating-label{border-color:#d7e5fa;color:#213b69;box-shadow:0 14px 28px #1742ce1a}
+.label-marker{background:linear-gradient(145deg,#2454e5,#20bdef)}
+.focus-shape{border-color:#20bdef}
+.section-kicker span:first-child{border-color:#bcd3fc}
+.about-stat-grid>div,.project-card,.article-card{border-color:#dfe7f5}
+.about-stat-grid small,.article-number{color:#7b8da7}
+.work-section{background:#f0f5ff}
+.filter{border-color:#d2dff4;color:#526b8d}
+.filter.active{background:#1742ce;border-color:#1742ce;color:#fff}
+.project-card{box-shadow:0 3px 12px #1b4ac30b}
+.project-card:hover{box-shadow:0 13px 27px #1742ce18}
+.project-art-real.art-techmood{background:#153c9b}
+.project-art-real.art-mentor{background:#e6f0ff}
+.project-art-real.art-code{background:#e9f0ff}
+.project-art-real.art-growth{background:#edf3ff}
+.project-art-real.art-health{background:#e5f5fb}
+.project-art-real.art-impact{background:#f0edff}
+.project-category{color:#315bac}
+.project-info p,.case-details p{color:#536985}
+.project-status{background:#edf3ff;color:#607493}
+.case-section{background:#f8faff}
+.case-list,.case-card{border-color:#dbe4f3}
+.case-index>span:first-child,.case-stage{color:#7c8daa}
+.case-color.mentor-color{background:linear-gradient(90deg,#2454e5,#20bdef)}
+.case-actions a{border-color:#a8c6ff}
+.resume-primary{background:#f4f7ff}
+.resume-section .experience-entry,.resume-aside-block,.timeline-item>div{border-color:#dfe7f5}
+.experience-type,.experience-entry>p,.resume-aside-block>p{color:#5d728f}
+.experience-ongoing,.skill-pills span{background:#e5eeff;color:#1742ce}
+.experience-period{color:#667a96}
+.resume-aside-block.skills-block .skill-pills span{background:#eef4ff;color:#315bac}
+.article-icon.bg-teal{background:#e7f0ff;color:#2454e5}
+.knowledge-banner{background:#eff5ff;border-color:#bad1f6}
+.knowledge-banner p,.article-card p{color:#5f7291}
+.journey-section{background:#ecf3ff}
+.journey-layout>div:first-child>p,.timeline-item p{color:#5e728e}
+.timeline:before{background:#bad0f2}
+.timeline-mark{border-color:#c7d9f7}
+.timeline-item>div{background:#fff}
+.contact-card{background:linear-gradient(125deg,#0e2044 0%,#153d91 100%)}
+.contact-eyebrow{color:#b5dcff}
+.contact-card p{color:#d1e2fa}
+.contact-link{color:#eef6ff;border-color:#91b1da}
+.btn-light{color:#1742ce}
+.profile-tool{color:#f5faff}
+.profile-tool span:first-child{color:#8fddfa}
+.profile-feedback{color:#bbebff!important}
+.social-section{background:#f0f5ff}
+.social-heading p{color:#687d99}
+.social-grid a{border-color:#dce6f7}
+.social-grid a:hover{border-color:#96b8f5;background:#f9fbff}
+.social-icon{background:#e9f0ff;color:#2454e5}
+.social-arrow{color:#8197b5}
+.telegram-channel-cta{background:linear-gradient(115deg,#15366d,#2454e5);border-color:#426fe9;box-shadow:0 12px 25px #1742ce1e}
+.telegram-channel-cta:hover{box-shadow:0 16px 27px #1742ce2b}
+.channel-copy small{color:#d9e7ff}
+.channel-action{color:#b4efff}
+.footer-inner>span,.footer-end{color:#6e829f}
+.case-actions a:focus-visible,.project-link:focus-visible,.text-link:focus-visible,.btn:focus-visible,.nav a:focus-visible,.filter:focus-visible,.menu-btn:focus-visible,.lang-btn:focus-visible,.social-grid a:focus-visible,.telegram-channel-cta:focus-visible{outline:3px solid #20bdef;outline-offset:4px}
+@media(max-width:900px){.nav{background:#f8faff;box-shadow:0 20px 28px #15366d12}}
+
