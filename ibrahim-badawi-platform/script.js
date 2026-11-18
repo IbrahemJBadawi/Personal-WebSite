@@ -89,6 +89,14 @@ copy.ar.copyFailed = 'تعذّر النسخ. يمكنك نسخ الرابط يد
 copy.en.copyFailed = 'Copy unavailable. You can copy the URL manually.';
 copy.ar.realLogo = 'شعار المنصة الأصلي';
 copy.en.realLogo = 'Original platform logo';
+copy.ar.channelTitle = 'انضم إلى قناتي على تلجرام';
+copy.en.channelTitle = 'Join my Telegram channel';
+copy.ar.channelDesc = 'تحديثات مشاريعي وأفكاري في عالم التقنية.';
+copy.en.channelDesc = 'Updates on my projects and ideas in technology.';
+copy.ar.channelJoin = 'انضم الآن';
+copy.en.channelJoin = 'Join now';
+copy.ar.telegramPersonal = 'حسابي على تلجرام';
+copy.en.telegramPersonal = 'Personal Telegram';
 
 const htmlKeys = new Set(['heroTitle','aboutTitle','journeyTitle','contactTitle']);
 let language = 'ar';
