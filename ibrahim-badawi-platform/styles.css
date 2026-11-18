@@ -416,4 +416,16 @@ body{line-height:1.75}
   .portrait-floating-label .ui-icon{width:15px;height:15px}
 }
 @media(prefers-reduced-motion:reduce){.portrait-floating-label{animation:none!important}}
-
+.social-links-stack{display:grid;gap:13px;min-width:0}
+.telegram-channel-cta{display:flex;align-items:center;gap:15px;min-width:0;padding:21px 20px;border-radius:17px;background:linear-gradient(115deg,#103f43,#0a5b57);color:#fff;border:1px solid #266963;box-shadow:0 12px 25px #16483f15;transition:transform .2s ease,box-shadow .2s ease}
+.telegram-channel-cta:hover{transform:translateY(-2px);box-shadow:0 16px 27px #16483f25}
+.telegram-channel-cta:focus-visible{outline:3px solid #deac57;outline-offset:4px}
+.channel-icon{display:grid;place-items:center;flex:none;width:51px;height:51px;background:#ffffff1c;border:1px solid #ffffff30;border-radius:15px}
+.channel-icon .ui-icon{width:25px;height:25px}
+.channel-copy{display:grid;gap:3px;min-width:0;flex:1}
+.channel-copy strong{font-size:17px;line-height:1.5}
+.channel-copy small{font-size:12px;line-height:1.65;color:#d0e9e3}
+.channel-action{white-space:nowrap;display:inline-flex;align-items:center;gap:7px;font-size:12px;font-weight:700;color:#ffdfa1}
+.channel-action span:last-child{font:18px Arial,sans-serif}
+@media(max-width:600px){.telegram-channel-cta{padding:17px 15px;gap:11px;border-radius:14px}.channel-icon{width:42px;height:42px;border-radius:12px}.channel-icon .ui-icon{width:22px;height:22px}.channel-copy strong{font-size:15px}.channel-copy small{font-size:11px}.channel-action{font-size:11px}}
+@media(max-width:380px){.telegram-channel-cta{flex-wrap:wrap}.channel-action{margin-inline-start:53px}}
