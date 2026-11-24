@@ -868,3 +868,22 @@ html[dir="ltr"] .timeline-item:hover>div{transform:translateX(2px)}
 @media(prefers-reduced-motion:reduce){
   .method-step,.timeline-item>div{transition:none!important;transform:none!important}
 }
+
+
+/* Filter state: give visible results an even layout, regardless of source order. */
+@media(min-width:1061px){
+  .work-section .project-grid.filtered-view .project-card:not([hidden]),
+  .work-section .project-grid.filtered-view .project-card.featured-project:not([hidden]),
+  .work-section .project-grid.filtered-view .project-card.featured-project + .project-card:not([hidden]){
+    grid-column:span 6;display:flex;min-height:0
+  }
+  .work-section .project-grid.filtered-view .featured-project .project-art{
+    height:185px;min-height:0
+  }
+  .work-section .project-grid.filtered-view .featured-project .project-info{
+    justify-content:flex-start;padding:23px 24px 24px
+  }
+}
+@media(max-width:600px){
+  .work-section .project-grid.filtered-view .project-card:not([hidden]){grid-column:1 / -1}
+}
