@@ -150,6 +150,8 @@ function setLanguage(lang) {
     if (htmlKeys.has(key)) el.innerHTML = dict[key];
   });
   updateProjectCount();
+  const filtersGroup = document.querySelector('.filters[role="group"]');
+  if (filtersGroup) filtersGroup.setAttribute('aria-label', lang === 'ar' ? 'تصفية المشاريع' : 'Filter projects');
   const langButton = document.querySelector('#lang-toggle');
   langButton.textContent = lang === 'ar' ? 'EN' : 'عربي';
   langButton.setAttribute('aria-label', lang === 'ar' ? 'Switch to English' : 'التبديل إلى العربية');
@@ -190,6 +192,7 @@ document.querySelectorAll('[data-filter]').forEach(button => button.addEventList
   document.querySelectorAll('[data-category]').forEach(card => {
     card.hidden = filter !== 'all' && card.dataset.category !== filter;
   });
+  document.querySelector('#project-grid')?.classList.toggle('filtered-view', filter !== 'all');
   updateProjectCount();
 }));
 
