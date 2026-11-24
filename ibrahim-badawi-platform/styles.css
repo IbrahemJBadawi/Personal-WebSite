@@ -537,3 +537,9 @@ body{background:var(--cream)}
 .techmood-community-cta:hover{box-shadow:0 16px 30px #1742ce29}
 .techmood-community-cta .channel-action{color:#b5ebff}
 @media(max-width:600px){.techmood-community-cta .channel-copy strong{font-size:14px}}
+
+/* TechMood Telegram community is distinct from the personal Telegram channel. */
+.techmood-telegram-cta{background:linear-gradient(118deg,#123e7e,#197bc0);border-color:#357eac}
+.techmood-telegram-cta:hover{box-shadow:0 15px 30px #163f9025}
+.techmood-telegram-cta .channel-action{color:#c4ecff}
+@media(max-width:600px){.techmood-telegram-cta{padding:16px 14px}}
