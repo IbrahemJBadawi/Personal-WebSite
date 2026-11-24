@@ -112,6 +112,25 @@ copy.en.telegramCommunityDesc = 'Technology discussions, professional exchange a
 copy.ar.telegramCommunityJoin = 'انضم عبر تلجرام';
 copy.en.telegramCommunityJoin = 'Join on Telegram';
 
+copy.ar.methodEyebrow = 'منهج العمل';
+copy.en.methodEyebrow = 'Working approach';
+copy.ar.methodTitle = 'من فهم الاحتياج إلى تطوير تجربة أفضل.';
+copy.en.methodTitle = 'From understanding needs to shaping better digital experiences.';
+copy.ar.methodStep1Title = 'فهم المتطلبات';
+copy.en.methodStep1Title = 'Understand requirements';
+copy.ar.methodStep1Desc = 'دراسة احتياجات المستخدمين وطريقة سير العمليات.';
+copy.en.methodStep1Desc = 'Analyse user needs and how processes work.';
+copy.ar.methodStep2Title = 'هيكلة الحل';
+copy.en.methodStep2Title = 'Structure the solution';
+copy.ar.methodStep2Desc = 'تنظيم الوظائف والأولويات ومسارات الاستخدام.';
+copy.en.methodStep2Desc = 'Organise product features, priorities and user journeys.';
+copy.ar.methodStep3Title = 'التحسين المستمر';
+copy.en.methodStep3Title = 'Iterate and improve';
+copy.ar.methodStep3Desc = 'مراجعة التجربة وتطوير الحل بناءً على الملاحظات.';
+copy.en.methodStep3Desc = 'Review the experience and refine solutions using feedback.';
+copy.ar.featuredLabel = 'المشروع الرئيسي';
+copy.en.featuredLabel = 'Flagship initiative';
+
 const htmlKeys = new Set(['heroTitle','aboutTitle','journeyTitle','contactTitle']);
 let language = 'ar';
 try { if (localStorage.getItem('ibrahem-website-language') === 'en' || localStorage.getItem('ibrahim-website-language') === 'en') language = 'en'; } catch (_) {}
@@ -130,6 +149,7 @@ function setLanguage(lang) {
     const key = el.dataset.i18nHtml;
     if (htmlKeys.has(key)) el.innerHTML = dict[key];
   });
+  updateProjectCount();
   const langButton = document.querySelector('#lang-toggle');
   langButton.textContent = lang === 'ar' ? 'EN' : 'عربي';
   langButton.setAttribute('aria-label', lang === 'ar' ? 'Switch to English' : 'التبديل إلى العربية');
@@ -170,7 +190,19 @@ document.querySelectorAll('[data-filter]').forEach(button => button.addEventList
   document.querySelectorAll('[data-category]').forEach(card => {
     card.hidden = filter !== 'all' && card.dataset.category !== filter;
   });
+  updateProjectCount();
 }));
+
+
+function updateProjectCount() {
+  const projects = [...document.querySelectorAll('#project-grid .project-card')];
+  const visible = projects.filter(card => !card.hidden).length;
+  const counter = document.querySelector('#project-count');
+  if (!counter) return;
+  counter.textContent = language === 'ar'
+    ? `عرض ${visible} من ${projects.length} مشاريع`
+    : `Showing ${visible} of ${projects.length} projects`;
+}
 
 const dialog = document.querySelector('#article-dialog');
 let returnFocusTo = null;
