@@ -530,3 +530,10 @@ body{background:var(--cream)}
 .case-actions a:focus-visible,.project-link:focus-visible,.text-link:focus-visible,.btn:focus-visible,.nav a:focus-visible,.filter:focus-visible,.menu-btn:focus-visible,.lang-btn:focus-visible,.social-grid a:focus-visible,.telegram-channel-cta:focus-visible{outline:3px solid #20bdef;outline-offset:4px}
 @media(max-width:900px){.nav{background:#f8faff;box-shadow:0 20px 28px #15366d12}}
 
+
+/* TechMood Community: distinct from the personal WhatsApp contact. */
+.techmood-community-cta{background:linear-gradient(115deg,#0e2044,#255eae);border-color:#4474c4}
+.techmood-community-cta .channel-icon{background:#ffffff1b;border-color:#ffffff37}
+.techmood-community-cta:hover{box-shadow:0 16px 30px #1742ce29}
+.techmood-community-cta .channel-action{color:#b5ebff}
+@media(max-width:600px){.techmood-community-cta .channel-copy strong{font-size:14px}}
