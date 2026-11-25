@@ -889,115 +889,238 @@ html[dir="ltr"] .timeline-item:hover>div{transform:translateX(2px)}
 }
 
 
-/* Layout repair 2026-11: use available space, not artificial blank gutters. */
-.about{padding-block:clamp(46px,5.5vw,80px)}
-.about .about-layout{display:grid;grid-template-columns:minmax(0,.94fr) minmax(0,1.06fr);gap:clamp(20px,3vw,45px);align-items:start}
-.about .section-intro,.about .about-body{min-width:0}
-.about .section-intro h2{font-size:clamp(29px,3vw,43px);max-width:23ch;line-height:1.4;margin:12px 0 0;text-wrap:balance}
+/* Balanced page layouts — 2026-11-25
+   CSS Grid areas preserve a clear RTL/LTR reading order and eliminate unused gutters. */
+
+/* About: heading / substantive copy / professional focus share the available width. */
+.about{padding-block:clamp(42px,5.1vw,74px)}
+.about .about-layout{
+  display:grid;
+  grid-template-columns:minmax(0,.91fr) minmax(0,1.09fr);
+  grid-template-rows:auto 1fr;
+  grid-template-areas:"heading description" "focus description";
+  align-items:start;
+  column-gap:clamp(22px,3.2vw,46px);
+  row-gap:17px
+}
+.about .section-intro{grid-area:heading;min-width:0}
+.about .about-body{grid-area:description;min-width:0;align-self:stretch}
+.about .about-highlights{grid-area:focus;align-self:end;min-width:0}
+.about .section-intro h2{
+  font-size:clamp(29px,3.2vw,44px);
+  line-height:1.39;max-width:25ch;margin:13px 0 0;text-wrap:balance
+}
 .about .about-body,html[dir="ltr"] .about .about-body{
-  padding:0!important;padding-inline-start:clamp(16px,2.1vw,28px)!important;
-  border:0!important;border-inline-start:2px solid #d8e5fa!important
+  padding:0!important;
+  padding-inline-start:clamp(17px,2vw,27px)!important;
+  border:0!important;
+  border-inline-start:2px solid #d5e3fa!important
 }
-.about .about-body>p{max-width:68ch;font-size:15px;line-height:1.86;margin:0 0 14px}
-.about .method-panel{margin-top:28px}
+.about .about-body>p{font-size:15px;line-height:1.9;max-width:69ch;margin:0 0 16px}
+.about .about-body .text-link{margin-top:5px;display:inline-flex;align-items:center}
+.about-highlights{display:flex;flex-wrap:wrap;gap:8px;max-width:450px}
+.about-highlights [role="listitem"]{
+  border:1px solid #d5e3f9;background:linear-gradient(135deg,#f5f9ff,#edf4ff);
+  border-radius:999px;color:#315bac;font-weight:700;font-size:12px;
+  padding:8px 12px;line-height:1.5;white-space:normal
+}
+.about .method-panel{margin-top:26px}
 
-/* Contact: content and actions form two columns on desktop, one on mobile. */
-.contact-section{padding-block:clamp(44px,5.5vw,70px)}
-.contact-card{min-height:0;padding:clamp(28px,4vw,52px);border-radius:22px}
-.contact-content{display:grid;grid-template-columns:minmax(0,1.03fr) minmax(345px,.97fr);gap:clamp(20px,4vw,58px);align-items:center;max-width:none;width:100%}
-.contact-intro,.contact-action-panel{min-width:0}
-.contact-intro h2{font-size:clamp(30px,3.6vw,48px);line-height:1.37;max-width:18ch;margin:10px 0 12px;text-wrap:balance}
-.contact-intro>p{font-size:14px;line-height:1.78;max-width:43ch;margin:0}
-.contact-action-panel{border:1px solid rgba(225,236,255,.2);background:linear-gradient(135deg,rgba(255,255,255,.095),rgba(255,255,255,.035));padding:clamp(16px,2.1vw,26px);border-radius:19px;box-shadow:0 12px 33px #07143822}
-.contact-action-panel .contact-links{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;align-items:stretch}
-.contact-action-panel .contact-links>a{min-height:53px;min-width:0;display:flex;align-items:center;justify-content:space-between;gap:9px;padding:10px 12px;border:1px solid #e4efff48;background:#ffffff0b;border-radius:11px;font-size:12px;font-weight:700;line-height:1.48}
-.contact-action-panel .contact-links>a:first-child{grid-column:1/-1;min-height:59px;padding-inline:17px;color:#1d49c3;background:#fff;border-color:#fff;font-size:14px}
-.contact-action-panel .contact-links>a:hover{border-color:#ffffff75;background:#ffffff1e}
-.contact-action-panel .contact-links>a:first-child:hover{background:#edf4ff;color:#1742ce}
-.contact-action-panel .contact-links .action-icon{flex:none;width:27px;height:27px}
-.contact-action-panel .contact-links .btn-light .action-icon{width:32px;height:32px}
-.contact-action-panel .profile-tools{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px;padding-top:13px;margin-top:13px;border-top:1px solid #ffffff31}
-.contact-action-panel .profile-tool{min-width:0;width:100%;display:flex;align-items:center;justify-content:center;gap:8px;min-height:47px;padding:9px 8px;font-size:12px;line-height:1.4;border-radius:10px;border:1px solid #ffffff45}
-.contact-action-panel .profile-tool .ui-icon{width:17px;height:17px;flex:none}
-.contact-action-panel .profile-feedback:empty{display:none}
-.contact-action-panel .profile-feedback:not(:empty){margin:12px 0 0}
+/* Contact: three real actions fill the right column; copy/share fill the left. */
+.contact-section{padding-block:clamp(37px,4.6vw,56px)}
+.contact-card{
+  min-height:0;padding:clamp(23px,3.7vw,48px);
+  border-radius:22px;background:linear-gradient(125deg,#0e2044,#153d91)
+}
+.contact-content{
+  display:grid;width:100%;max-width:none;
+  grid-template-columns:minmax(0,.98fr) minmax(0,1.02fr);
+  grid-template-areas:"intro actions" "tools actions" "feedback actions";
+  column-gap:clamp(24px,3.6vw,54px);
+  row-gap:15px;align-items:start
+}
+.contact-content>.contact-intro{grid-area:intro;min-width:0;align-self:start}
+.contact-intro h2{
+  font-size:clamp(30px,3.6vw,47px);
+  line-height:1.36;max-width:20ch;margin:11px 0 13px;text-wrap:balance
+}
+.contact-intro>p{
+  font-size:14px;line-height:1.78;
+  max-width:45ch;margin:0;color:#d1e2fa
+}
+.contact-content>.contact-links{
+  grid-area:actions;align-self:stretch;
+  display:grid;grid-template-columns:minmax(0,1fr);
+  grid-template-rows:repeat(3,minmax(68px,1fr));
+  gap:10px;min-width:0
+}
+.contact-content>.contact-links>a{
+  min-width:0;min-height:67px;
+  display:flex;align-items:center;justify-content:space-between;
+  gap:12px;padding:15px 18px;
+  border-radius:12px;font-weight:700;font-size:14px;line-height:1.45;
+  color:#eff6ff;border:1px solid #b9d4ff4f;background:#ffffff13;
+  transition:background .2s,border-color .2s,transform .2s
+}
+.contact-content>.contact-links>a:first-child{
+  background:#fff;color:#1b48c7;border-color:#fff;
+  box-shadow:0 8px 25px #03112e1a
+}
+.contact-content>.contact-links>a:hover{background:#ffffff25;border-color:#ffffff88;transform:translateY(-1px)}
+.contact-content>.contact-links>a:first-child:hover{background:#eff5ff;color:#1742ce}
+.contact-content>.contact-links .action-icon{flex:none;width:31px;height:31px}
+.contact-content>.contact-links>a:first-child .action-icon{background:#e7f0ff;color:#2454e5}
+.contact-content>.profile-tools{
+  grid-area:tools;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));
+  align-items:stretch;gap:10px;margin:0;padding:13px 0 0;
+  border-top:1px solid #d3e6ff38;min-width:0
+}
+.contact-content>.profile-tools .profile-tool{
+  min-width:0;width:100%;min-height:47px;
+  display:flex;justify-content:center;align-items:center;
+  border:1px solid #c5d8ff69;border-radius:11px;
+  color:#f5faff;background:#ffffff0d;font-size:12px;
+  line-height:1.45;padding:9px 11px;gap:8px
+}
+.contact-content>.profile-tools .profile-tool:hover{background:#ffffff27}
+.contact-content>.profile-tools .ui-icon{width:17px;height:17px;flex:none}
+.contact-content>.profile-feedback{grid-area:feedback;margin:0;font-size:12px}
+.contact-content>.profile-feedback:empty{display:none}
 
-/* Social: dedicate one side to 3 community cards and the other to 8 personal accounts. */
-.social-section{padding-block:clamp(43px,5.7vw,72px)}
-.social-layout{display:grid;grid-template-columns:minmax(0,1fr);gap:23px}
-.social-heading{display:flex;align-items:center;gap:14px}
-.social-heading h2{font-size:clamp(23px,2.3vw,30px);margin:0}
+/* Social: three community invitations directly alongside eight accounts. */
+.social-section{padding-block:clamp(36px,4.5vw,56px)}
+.social-layout{display:grid;grid-template-columns:minmax(0,1fr);gap:16px}
+.social-heading{display:flex;gap:13px;align-items:center}
+.social-heading h2{font-size:clamp(23px,2.2vw,29px);margin:0}
 .social-heading strong{font-size:14px}
-.social-links-stack{display:grid;grid-template-columns:minmax(0,1.04fr) minmax(0,1.16fr);align-items:stretch;gap:16px;min-width:0}
-.social-community-grid{display:grid;grid-template-rows:repeat(3,minmax(0,1fr));gap:10px;min-width:0}
-.social-community-grid .telegram-channel-cta{display:grid;grid-template-columns:44px minmax(0,1fr);grid-template-rows:auto auto;gap:6px 12px;min-height:0;align-content:center;padding:13px 15px;border-radius:14px}
-.social-community-grid .channel-icon{grid-column:1;grid-row:1 / span 2;width:43px;height:43px}
+.social-links-stack{
+  display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.04fr);
+  gap:15px;align-items:stretch;min-width:0
+}
+.social-community-grid{display:grid;grid-template-rows:repeat(3,minmax(0,1fr));gap:9px;min-width:0}
+.social-community-grid .telegram-channel-cta{
+  display:grid;grid-template-columns:43px minmax(0,1fr);
+  grid-template-rows:auto auto;align-content:center;
+  gap:5px 12px;min-width:0;min-height:0;
+  padding:14px 16px;border-radius:14px
+}
+.social-community-grid .channel-icon{grid-column:1;grid-row:1/span 2;width:43px;height:43px}
 .social-community-grid .channel-copy{grid-column:2;grid-row:1;min-width:0}
-.social-community-grid .channel-copy strong{font-size:13px;line-height:1.5}
-.social-community-grid .channel-copy small{font-size:11px;line-height:1.56;display:block}
-.social-community-grid .channel-action{grid-column:2;grid-row:2;margin:0;justify-content:flex-start;gap:7px;font-size:11px}
-.social-community-grid .channel-action .action-icon{width:23px;height:23px;border-radius:7px}
-.social-links-stack>.social-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:repeat(4,minmax(0,1fr));gap:10px;min-width:0}
-.social-links-stack>.social-grid>a{min-width:0;min-height:65px;height:100%;padding:10px 12px;font-size:12px;line-height:1.45;gap:8px}
+.social-community-grid .channel-copy strong{font-size:13.5px;line-height:1.48}
+.social-community-grid .channel-copy small{display:block;font-size:11px;line-height:1.52}
+.social-community-grid .channel-action{
+  grid-column:2;grid-row:2;margin:0;justify-content:flex-start;
+  gap:7px;font-size:11px
+}
+.social-community-grid .channel-action .action-icon{width:24px;height:24px;border-radius:8px}
+.social-links-stack>.social-grid{
+  display:grid;grid-template-columns:repeat(2,minmax(0,1fr));
+  grid-template-rows:repeat(4,minmax(0,1fr));
+  gap:9px;min-width:0
+}
+.social-links-stack>.social-grid>a{
+  min-width:0;min-height:62px;height:100%;
+  padding:10px 12px;gap:8px;
+  font-size:12px;line-height:1.48;border-radius:12px
+}
 .social-links-stack>.social-grid .social-icon{flex:none}
-.social-links-stack>.social-grid .social-arrow{flex:none;margin-inline-start:auto}
+.social-links-stack>.social-grid .social-arrow{margin-inline-start:auto;flex:none}
 
-/* Tablet: compact 2-column contact, then well-filled community cards and account tiles. */
-@media(max-width:1000px){
- .contact-content{grid-template-columns:minmax(0,1fr) minmax(300px,.95fr);gap:21px}
- .contact-card{padding:30px}
- .contact-intro h2{font-size:clamp(29px,3.7vw,38px)}
- .social-links-stack{grid-template-columns:minmax(0,.98fr) minmax(0,1.02fr);gap:12px}
- .social-community-grid .telegram-channel-cta{padding:12px}
- .social-links-stack>.social-grid>a{gap:6px;padding:9px}
+/* Small laptops use an efficient two-column social layout. */
+@media(max-width:1050px){
+  .contact-content{column-gap:24px}
+  .contact-content>.contact-links>a{padding:12px 13px}
+  .social-links-stack{gap:11px}
+  .social-community-grid .telegram-channel-cta{padding:11px 12px}
+  .social-links-stack>.social-grid>a{gap:6px;padding:9px}
 }
-@media(max-width:800px){
- .about .about-layout{grid-template-columns:minmax(0,1fr)!important;gap:15px!important}
- .about .section-intro h2{max-width:26ch;margin:9px 0 0}
- .about .about-body,html[dir="ltr"] .about .about-body{padding:0!important;padding-inline-start:0!important;border:0!important;border-inline-start:0!important}
- .about .about-body>p{font-size:14px;line-height:1.82}
- .contact-content{grid-template-columns:minmax(0,1fr);gap:20px}
- .contact-intro h2,.contact-intro>p{max-width:56ch}
- .social-links-stack{grid-template-columns:minmax(0,1fr);gap:16px}
- .social-community-grid{grid-template-columns:repeat(3,minmax(0,1fr));grid-template-rows:auto;gap:10px}
- .social-community-grid .telegram-channel-cta{grid-template-columns:minmax(0,1fr);grid-template-rows:auto 1fr auto;align-content:start;min-height:152px;gap:8px}
- .social-community-grid .channel-icon{grid-column:1;grid-row:1;width:39px;height:39px}
- .social-community-grid .channel-copy{grid-column:1;grid-row:2}
- .social-community-grid .channel-action{grid-column:1;grid-row:3}
- .social-links-stack>.social-grid{grid-template-columns:repeat(4,minmax(0,1fr));grid-template-rows:repeat(2,minmax(0,1fr))}
+/* Tablet and phone: the heading is followed directly by its descriptive text. */
+@media(max-width:900px){
+  .about .about-layout{
+    grid-template-columns:minmax(0,1fr);
+    grid-template-rows:auto;grid-template-areas:"heading" "description" "focus";
+    row-gap:15px
+  }
+  .about .section-intro h2{max-width:28ch;margin:9px 0 0}
+  .about .about-body,html[dir="ltr"] .about .about-body{
+    padding:0!important;padding-inline-start:0!important;
+    border:0!important;border-inline-start:0!important
+  }
+  .about .about-body>p{font-size:14px;line-height:1.83;margin:0 0 12px}
+  .about .about-highlights{gap:7px}
+  .contact-content{
+    grid-template-columns:minmax(0,1fr);
+    grid-template-areas:"intro" "actions" "tools" "feedback";
+    row-gap:16px
+  }
+  .contact-intro h2,.contact-intro>p{max-width:55ch}
+  .contact-content>.contact-links{
+    display:grid;grid-template-columns:repeat(2,minmax(0,1fr));
+    grid-template-rows:auto auto;gap:9px
+  }
+  .contact-content>.contact-links>a{min-height:56px;font-size:13px;padding:11px 13px}
+  .contact-content>.contact-links>a:first-child{grid-column:1/-1}
+  .contact-content>.profile-tools{margin:0;padding-top:12px}
+  .social-links-stack{grid-template-columns:minmax(0,1fr);gap:13px}
+  .social-community-grid{
+    grid-template-columns:repeat(3,minmax(0,1fr));
+    grid-template-rows:auto;gap:9px
+  }
+  .social-community-grid .telegram-channel-cta{
+    grid-template-columns:minmax(0,1fr);
+    grid-template-rows:auto 1fr auto;align-content:start;min-height:148px;gap:7px
+  }
+  .social-community-grid .channel-icon{grid-column:1;grid-row:1;width:38px;height:38px}
+  .social-community-grid .channel-copy{grid-column:1;grid-row:2}
+  .social-community-grid .channel-action{grid-column:1;grid-row:3}
+  .social-links-stack>.social-grid{
+    grid-template-columns:repeat(4,minmax(0,1fr));
+    grid-template-rows:repeat(2,minmax(0,1fr))
+  }
 }
+/* Phone: compact, full-width content with no redundant blank columns. */
 @media(max-width:600px){
- .about{padding-block:42px}
- .about .about-layout{gap:11px!important}
- .about .section-intro h2{font-size:clamp(28px,7.4vw,35px);line-height:1.36}
- .about .about-body>p{margin-bottom:11px}
- .about .method-panel{margin-top:20px}
- .contact-section{padding-block:40px}
- .contact-card{padding:23px 18px;border-radius:17px}
- .contact-content{gap:17px}
- .contact-intro h2{font-size:clamp(27px,7.2vw,36px);margin:9px 0}
- .contact-intro>p{font-size:13px}
- .contact-action-panel{padding:13px;border-radius:13px}
- .contact-action-panel .contact-links{gap:8px}
- .contact-action-panel .contact-links>a{min-height:50px;font-size:11px;padding:9px}
- .contact-action-panel .contact-links>a:first-child{min-height:54px;font-size:13px}
- .contact-action-panel .profile-tools{gap:8px;margin-top:11px;padding-top:11px}
- .contact-action-panel .profile-tool{font-size:11px;padding:8px 5px}
- .social-section{padding-block:42px}
- .social-layout{gap:16px}
- .social-community-grid{grid-template-columns:minmax(0,1fr);grid-template-rows:repeat(3,auto);gap:9px}
- .social-community-grid .telegram-channel-cta{grid-template-columns:39px minmax(0,1fr);grid-template-rows:auto auto;align-content:center;min-height:95px;gap:5px 11px;padding:13px}
- .social-community-grid .channel-icon{grid-column:1;grid-row:1 / span 2;width:39px;height:39px}
- .social-community-grid .channel-copy{grid-column:2;grid-row:1}
- .social-community-grid .channel-action{grid-column:2;grid-row:2}
- .social-links-stack>.social-grid{grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:auto;gap:8px}
- .social-links-stack>.social-grid>a{min-height:58px;font-size:12px;padding:8px 9px}
- .social-links-stack>.social-grid .social-icon{width:26px;height:26px}
- .social-links-stack>.social-grid .social-arrow{width:23px;height:23px}
+  .about{padding-block:39px}
+  .about .about-layout{row-gap:10px}
+  .about .section-intro h2{font-size:clamp(28px,7.2vw,36px);line-height:1.36}
+  .about .about-body>p{font-size:14px;line-height:1.8;margin-bottom:11px}
+  .about-highlights [role="listitem"]{font-size:11px;padding:7px 10px}
+  .about .method-panel{margin-top:20px}
+  .contact-section{padding-block:35px}
+  .contact-card{padding:22px 17px;border-radius:17px}
+  .contact-content{row-gap:13px}
+  .contact-intro h2{font-size:clamp(28px,7.2vw,36px);margin:9px 0}
+  .contact-intro>p{font-size:13px;line-height:1.73}
+  .contact-content>.contact-links{gap:8px}
+  .contact-content>.contact-links>a{min-height:51px;padding:9px 11px;font-size:11.5px}
+  .contact-content>.profile-tools{gap:8px;padding-top:10px}
+  .contact-content>.profile-tools .profile-tool{min-height:44px;padding:9px 7px;font-size:11px}
+  .social-section{padding-block:35px}
+  .social-layout{gap:14px}
+  .social-community-grid{grid-template-columns:minmax(0,1fr);grid-template-rows:auto;gap:9px}
+  .social-community-grid .telegram-channel-cta{
+    grid-template-columns:39px minmax(0,1fr);
+    grid-template-rows:auto auto;gap:5px 11px;
+    min-height:90px;padding:12px 13px
+  }
+  .social-community-grid .channel-icon{grid-column:1;grid-row:1/span 2;width:39px;height:39px}
+  .social-community-grid .channel-copy{grid-column:2;grid-row:1}
+  .social-community-grid .channel-action{grid-column:2;grid-row:2}
+  .social-links-stack>.social-grid{
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    grid-template-rows:auto;gap:8px
+  }
+  .social-links-stack>.social-grid>a{min-height:55px;font-size:12px;padding:8px 9px}
+  .social-links-stack>.social-grid .social-icon{width:26px;height:26px}
+  .social-links-stack>.social-grid .social-arrow{width:24px;height:24px}
 }
-@media(max-width:360px){
- .contact-action-panel .contact-links,.contact-action-panel .profile-tools{grid-template-columns:minmax(0,1fr)}
- .contact-action-panel .contact-links>a:first-child{grid-column:auto}
- .social-links-stack>.social-grid{grid-template-columns:minmax(0,1fr)}
- .social-community-grid .telegram-channel-cta{grid-template-columns:36px minmax(0,1fr)}
+@media(max-width:380px){
+  .contact-content>.contact-links{grid-template-columns:minmax(0,1fr)}
+  .contact-content>.contact-links>a:first-child{grid-column:auto}
+  .contact-content>.profile-tools{grid-template-columns:minmax(0,1fr)}
+  .social-links-stack>.social-grid{grid-template-columns:minmax(0,1fr)}
+  .social-community-grid .telegram-channel-cta{grid-template-columns:36px minmax(0,1fr)}
+}
+@media(prefers-reduced-motion:reduce){
+  .contact-content>.contact-links>a{transition:none!important;transform:none!important}
 }
