@@ -131,6 +131,9 @@ copy.en.methodStep3Desc = 'Review the experience and refine solutions using feed
 copy.ar.featuredLabel = 'المشروع الرئيسي';
 copy.en.featuredLabel = 'Flagship initiative';
 
+copy.ar.focusRequirement='تحليل المتطلبات';copy.en.focusRequirement='Requirements analysis';
+copy.ar.focusPlanning='تخطيط المنتجات';copy.en.focusPlanning='Product planning';
+copy.ar.focusExperience='تصميم تجربة المستخدم';copy.en.focusExperience='User experience';
 const htmlKeys = new Set(['heroTitle','aboutTitle','journeyTitle','contactTitle']);
 let language = 'ar';
 try { if (localStorage.getItem('ibrahem-website-language') === 'en' || localStorage.getItem('ibrahim-website-language') === 'en') language = 'en'; } catch (_) {}
