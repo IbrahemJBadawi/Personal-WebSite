@@ -134,6 +134,13 @@ copy.en.featuredLabel = 'Flagship initiative';
 copy.ar.focusRequirement='تحليل المتطلبات';copy.en.focusRequirement='Requirements analysis';
 copy.ar.focusPlanning='تخطيط المنتجات';copy.en.focusPlanning='Product planning';
 copy.ar.focusExperience='تصميم تجربة المستخدم';copy.en.focusExperience='User experience';
+copy.ar.youtubeChannelTitle = 'اشترك في قناتي على يوتيوب';
+copy.en.youtubeChannelTitle = 'Subscribe to my YouTube channel';
+copy.ar.youtubeChannelDesc = 'محتوى عن التقنية والابتكار وتطوير المنتجات الرقمية.';
+copy.en.youtubeChannelDesc = 'Technology, innovation and digital product development.';
+copy.ar.youtubeChannelSubscribe = 'اشترك في القناة';
+copy.en.youtubeChannelSubscribe = 'Subscribe';
+
 const htmlKeys = new Set(['heroTitle','aboutTitle','journeyTitle','contactTitle']);
 let language = 'ar';
 try { if (localStorage.getItem('ibrahem-website-language') === 'en' || localStorage.getItem('ibrahim-website-language') === 'en') language = 'en'; } catch (_) {}
