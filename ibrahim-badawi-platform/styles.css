@@ -1548,3 +1548,13 @@ html[data-theme="dark"] .dialog-close{color:#eaf1ff;background:#263c61}
 html[data-theme="dark"] .knowledge-banner{background:#1d3152;color:#e4efff;border-color:#3b5680}
 html[data-theme="dark"] .knowledge-banner p{color:#bed1ef}
 html[data-theme="dark"] .resume-primary .skill-pills span{background:#243e67;color:#cbdfff}
+
+
+/* QA fix: the featured 2-column card must respect project filters. */
+.work-section .project-grid .project-card[hidden],
+.work-section .project-grid .project-card.featured-project[hidden]{
+  display:none!important
+}
+@media(max-width:600px){
+  .site-header .nav{top:69px}
+}
