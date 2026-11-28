@@ -1561,3 +1561,9 @@ html[data-theme="dark"] .resume-primary .skill-pills span{background:#243e67;col
 
 /* Keep native controls in sync when the user overrides their system theme. */
 html[data-theme="light"]{color-scheme:light}
+
+
+/* Light-mode WCAG contrast corrections from browser accessibility audit. */
+html[data-theme="light"] .brand-copy small{color:#536b90}
+html[data-theme="light"] .footer-end,
+html[data-theme="light"] .footer-inner>span{color:#4b6386}
