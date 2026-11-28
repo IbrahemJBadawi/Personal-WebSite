@@ -1124,3 +1124,23 @@ html[dir="ltr"] .timeline-item:hover>div{transform:translateX(2px)}
 @media(prefers-reduced-motion:reduce){
   .contact-content>.contact-links>a{transition:none!important;transform:none!important}
 }
+
+/* YouTube subscription card: balanced fourth invitation alongside profile links. */
+.social-community-grid{grid-template-rows:repeat(4,minmax(0,1fr))}
+.youtube-channel-cta{
+  background:linear-gradient(115deg,#142e69,#253f83);
+  border:1px solid #4566a6
+}
+.youtube-channel-cta:hover{border-color:#86a7ec;box-shadow:0 13px 28px #163f9033}
+.youtube-channel-cta .channel-icon{background:#e41d37;border:1px solid #f05b73;color:#fff}
+.youtube-channel-cta .channel-icon .ui-icon{width:25px;height:25px;stroke-width:1.8}
+.youtube-channel-cta .channel-action{color:#dcecff}
+.youtube-channel-cta:focus-visible{outline:3px solid #20bdef;outline-offset:4px}
+@media(max-width:900px){
+  .social-community-grid{grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:repeat(2,minmax(0,1fr))}
+  .social-community-grid .youtube-channel-cta{min-height:148px}
+}
+@media(max-width:600px){
+  .social-community-grid{grid-template-columns:minmax(0,1fr);grid-template-rows:auto}
+  .social-community-grid .youtube-channel-cta{min-height:90px}
+}
