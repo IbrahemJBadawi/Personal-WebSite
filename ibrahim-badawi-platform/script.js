@@ -1,7 +1,7 @@
 const copy = {
   ar: {
     announcement:'من فلسطين، نبني أفكارًا تتجاوز الحدود',name:'إبراهيم بدوي',navAbout:'عنّي',navWork:'المشاريع',navKnowledge:'المعرفة',navJourney:'المسار',navContact:'تواصل',letsTalk:'لنتواصل',
-    eyebrow:'نظم معلومات إدارية × ابتكار رقمي',heroTitle:"إبراهيم بدوي | <span class=\"accent-underline\">الابتكار الرقمي</span> ونظم المعلومات",heroLead:"متخصص في نظم المعلومات الإدارية ومؤسس TechMood Technology. أقود مبادرات لتطوير المنتجات الرقمية، من تحليل المتطلبات إلى تخطيط الحلول وتحسين تجربة المستخدم.",exploreWork:'استكشف مشاريعي',knowMe:'تعرّف عليّ',
+    eyebrow:'نظم معلومات إدارية × ابتكار رقمي',heroTitle:"إبراهيم بدوي | <span class=\"accent-underline\">حلول رقمية تبدأ بفهم المشكلة.</span>",heroLead:"متخصص في نظم المعلومات الإدارية ومؤسس TechMood Technology. أقود مبادرات لتطوير المنتجات الرقمية، من تحليل المتطلبات إلى تخطيط الحلول وتحسين تجربة المستخدم.",exploreWork:'استكشف مشاريعي',knowMe:'تعرّف عليّ',
     aboutKicker:'عنّي',aboutTitle:'أبدأ بفهم المشكلة، <span>ثم أختار التقنية المناسبة.</span>',aboutP1:"أتممت دراسة بكالوريوس نظم المعلومات الإدارية في جامعة الأقصى، وأجمع في عملي بين المعرفة الإدارية والتحليل التقني لتطوير حلول رقمية تلبي احتياجات مؤسسية واضحة.",aboutP2:"تشمل مجالات عملي تحليل احتياجات المستخدمين، وتحديد أولويات المنتجات، وتصميم مسارات الاستخدام، وتنسيق تطوير المبادرات الرقمية في التعليم والأعمال والخدمات.",aboutStat1:'تحليل المتطلبات',aboutStat1Sub:'فهم العمليات والاحتياجات',aboutStat2:'تصميم التجربة',aboutStat2Sub:'حلول يسهل استخدامها',viewTechmood:'تعرّف على TechMood Technology',
     workKicker:'المشاريع',workTitle:"محفظة المشاريع الرقمية",workIntro:'مجموعة من المبادرات والمنتجات الرقمية التي أعمل عليها ضمن TechMood Technology في مجالات التعليم والأعمال والخدمات.',allOnTechmood:'موقع الشركة',filterAll:'جميع المشاريع',filterLearning:'التعلّم',filterBusiness:'الأعمال',filterImpact:'الأثر والخدمات',catEcosystem:'منظومة رقمية',catLearning:'تعلّم وتطوير مهني',catTechEducation:'تعليم تقني',catSaaS:'حلول مؤسسية',catHealth:'صحة رقمية',catSocial:'أثر مجتمعي',pTechmood:'منظومة لتطوير منتجات رقمية متخصصة في التعليم والأعمال والخدمات، مع استقلالية كل منتج وإمكانية التكامل عند الحاجة.',pMentor:"منصة للتعلّم والإرشاد المهني تربط المعرفة بالمهارات والمشاريع التطبيقية.",pCode:'دروس برمجة وتحديات قصيرة ومسارات للتعلّم خطوة بخطوة.',pGrowth:"حل رقمي لإدارة مراكز التدريب والدورات والتسجيل والحضور والتقارير.",pHealth:'مبادرة في الصحة الرقمية تركز على تنظيم الملف الصحي ومتابعة المؤشرات والمواعيد والخطط الصحية.',pImpact:'منصة لتنظيم فرص التطوع والمبادرات المجتمعية ومتابعة مشاركة المتطوعين.',viewWebsite:'زيارة الموقع',productEvolving:'منتج قيد التطوير',projectDisclaimer:'',
     knowledgeKicker:'الملاحظات',knowledgeTitle:"رؤى في نظم المعلومات والابتكار",knowledgeIntro:"مقالات وتحليلات حول نظم المعلومات والتحول الرقمي وتطوير المنتجات.",articleCategoryDigital:'التحول الرقمي',articleTitleDigital:'التحول الرقمي ليس مجرد تطبيق جديد',articleDescDigital:'لماذا تبدأ الرقمنة الجيدة بفهم العمل والناس قبل اختيار الأدوات؟',articleCategoryMIS:'نظم المعلومات',articleTitleMIS:'كيف تربط نظم المعلومات القرار بالبيانات؟',articleDescMIS:'من تسجيل الأحداث اليومية إلى استخراج مؤشرات يمكن العمل بها.',articleCategoryProduct:'بناء المنتجات',articleTitleProduct:'ابدأ بالمشكلة، لا بقائمة المزايا',articleDescProduct:'طريقة عملية لتحديد ما يستحق البناء في النسخة الأولى من منتجك.',readNote:'اقرأ الملاحظة',
@@ -37,7 +37,7 @@ const copy = {
   },
   en: {
     announcement:'From Palestine, building ideas beyond borders',name:'Ibrahem Badawi',navAbout:'About',navWork:'Projects',navKnowledge:'Knowledge',navJourney:'Journey',navContact:'Contact',letsTalk:'Let’s talk',
-    eyebrow:'Management Information Systems × Digital Innovation',heroTitle:"Ibrahem Badawi | <span class=\"accent-underline\">Digital Innovation</span> & Information Systems",heroLead:"Management Information Systems specialist and founder of TechMood Technology. I lead digital product initiatives spanning requirements analysis, product planning, user experience and process improvement.",exploreWork:'Explore projects',knowMe:'Get to know me',
+    eyebrow:'Management Information Systems × Digital Innovation',heroTitle:"Ibrahem Badawi | <span class=\"accent-underline\">Digital solutions built around real needs.</span>",heroLead:"Management Information Systems specialist and founder of TechMood Technology. I lead digital product initiatives spanning requirements analysis, product planning, user experience and process improvement.",exploreWork:'Explore projects',knowMe:'Get to know me',
     aboutKicker:'About',aboutTitle:'I start with the problem, <span>then choose the technology.</span>',aboutP1:"I completed my bachelor's studies in Management Information Systems at Al-Aqsa University. My work combines management knowledge and technical analysis to address organisational needs through digital solutions.",aboutP2:"My work covers user requirements, product priorities, user experience design and coordination of digital initiatives in education, business and services.",aboutStat1:'Requirements analysis',aboutStat1Sub:'Understanding how people work',aboutStat2:'Experience design',aboutStat2Sub:'Making products easier to use',viewTechmood:'Explore TechMood Technology',
     workKicker:'Projects',workTitle:"Digital product portfolio",workIntro:'A selection of digital products and initiatives I work on through TechMood Technology across education, business and services.',allOnTechmood:'Company website',filterAll:'All projects',filterLearning:'Learning',filterBusiness:'Business',filterImpact:'Impact & services',catEcosystem:'Digital ecosystem',catLearning:'Learning and mentoring',catTechEducation:'Technology education',catSaaS:'Business software',catHealth:'Digital health',catSocial:'Social impact',pTechmood:'A portfolio of specialised digital products across education, business and services, designed to operate independently and integrate where useful.',pMentor:'Practical learning, mentoring sessions and projects that put skills to work.',pCode:'Short coding lessons, challenges and step-by-step learning paths.',pGrowth:'Courses, trainers, learners and attendance management for training centres.',pHealth:'A digital health initiative focused on organising health records, measurements, appointments and care plans.',pImpact:'A platform for coordinating volunteer opportunities, community initiatives and participation.',viewWebsite:'Visit website',productEvolving:'In development',projectDisclaimer:'',
     knowledgeKicker:'Notes',knowledgeTitle:"Insights on information systems and innovation",knowledgeIntro:"Articles and analysis on information systems, digital transformation and product development.",articleCategoryDigital:'Digital transformation',articleTitleDigital:'Digital transformation is not just a new app',articleDescDigital:'Why good digitization starts with people and processes before tools.',articleCategoryMIS:'Information systems',articleTitleMIS:'How do information systems turn data into decisions?',articleDescMIS:'From daily records to actionable indicators.',articleCategoryProduct:'Building products',articleTitleProduct:'Start with the problem, not the feature list',articleDescProduct:'A practical approach to choosing what to build in a first release.',readNote:'Read note',
@@ -141,6 +141,17 @@ copy.en.youtubeChannelDesc = 'Technology, innovation and digital product develop
 copy.ar.youtubeChannelSubscribe = 'اشترك في القناة';
 copy.en.youtubeChannelSubscribe = 'Subscribe';
 
+copy.ar.heroFocus1 = 'تحليل الأعمال';
+copy.en.heroFocus1 = 'Business analysis';
+copy.ar.heroFocus2 = 'تطوير المنتجات';
+copy.en.heroFocus2 = 'Product development';
+copy.ar.heroFocus3 = 'تجربة المستخدم';
+copy.en.heroFocus3 = 'User experience';
+copy.ar.themeActionDark = 'تفعيل الوضع الداكن';
+copy.en.themeActionDark = 'Switch to dark mode';
+copy.ar.themeActionLight = 'تفعيل الوضع الفاتح';
+copy.en.themeActionLight = 'Switch to light mode';
+
 const htmlKeys = new Set(['heroTitle','aboutTitle','journeyTitle','contactTitle']);
 let language = 'ar';
 try { if (localStorage.getItem('ibrahem-website-language') === 'en' || localStorage.getItem('ibrahim-website-language') === 'en') language = 'en'; } catch (_) {}
@@ -160,6 +171,9 @@ function setLanguage(lang) {
     if (htmlKeys.has(key)) el.innerHTML = dict[key];
   });
   updateProjectCount();
+  syncThemeButton();
+  const youtubeCard = document.querySelector('.youtube-channel-cta');
+  if (youtubeCard) youtubeCard.setAttribute('aria-label', lang === 'ar' ? 'الاشتراك في قناة إبراهيم بدوي على يوتيوب' : 'Subscribe to Ibrahem Badawi on YouTube');
   const filtersGroup = document.querySelector('.filters[role="group"]');
   if (filtersGroup) filtersGroup.setAttribute('aria-label', lang === 'ar' ? 'تصفية المشاريع' : 'Filter projects');
   const langButton = document.querySelector('#lang-toggle');
@@ -169,6 +183,40 @@ function setLanguage(lang) {
   menu.setAttribute('aria-label', menu.getAttribute('aria-expanded') === 'true' ? (lang === 'ar' ? 'إغلاق القائمة' : 'Close menu') : (lang === 'ar' ? 'فتح القائمة' : 'Open menu'));
   document.querySelector('#profile-feedback').textContent = '';
   try { localStorage.setItem('ibrahem-website-language', lang); } catch (_) {}
+}
+
+
+const themeButton = document.querySelector('#theme-toggle');
+function syncThemeButton() {
+  const dark = document.documentElement.dataset.theme === 'dark';
+  const label = copy[language][dark ? 'themeActionLight' : 'themeActionDark'];
+  themeButton.setAttribute('aria-pressed', String(dark));
+  themeButton.setAttribute('aria-label', label);
+  themeButton.setAttribute('title', label);
+  const text = document.querySelector('#theme-toggle-text');
+  if (text) text.textContent = label;
+  document.querySelector('#theme-icon-use').setAttribute('href', dark ? '#icon-sun' : '#icon-moon');
+  document.querySelector('meta[name="theme-color"]').setAttribute('content', dark ? '#0b1426' : '#2454e5');
+}
+function setTheme(theme, save = false) {
+  document.documentElement.dataset.theme = theme === 'dark' ? 'dark' : 'light';
+  syncThemeButton();
+  if (save) {
+    try { localStorage.setItem('ibrahem-website-theme', document.documentElement.dataset.theme); } catch (_) {}
+  }
+}
+themeButton.addEventListener('click', () => {
+  setTheme(document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark', true);
+});
+if (window.matchMedia) {
+  const systemTheme = window.matchMedia('(prefers-color-scheme: dark)');
+  const syncSystemTheme = event => {
+    try {
+      if (localStorage.getItem('ibrahem-website-theme')) return;
+    } catch (_) { return; }
+    setTheme(event.matches ? 'dark' : 'light');
+  };
+  if (systemTheme.addEventListener) systemTheme.addEventListener('change', syncSystemTheme);
 }
 
 document.querySelector('#lang-toggle').addEventListener('click', () => setLanguage(language === 'ar' ? 'en' : 'ar'));
